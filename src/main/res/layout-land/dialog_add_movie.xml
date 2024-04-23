@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Título del diálogo -->
+    <TextView
+        android:id="@+id/text_view_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Película"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_dialog_title"
+        android:layout_marginTop="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Campo de entrada para el título de la película -->
+            <EditText
+                android:id="@+id/edit_text_movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Título de la Película"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Campo de entrada para la calificación de la película -->
+            <RatingBar
+                android:id="@+id/rating_bar_movie_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:layout_below="@id/edit_text_movie_title"
+                android:layout_marginBottom="16dp"
+                android:layout_alignParentStart="true" />
+
+            <!-- CheckBox para marcar si la película está vista -->
+            <CheckBox
+                android:id="@+id/check_box_movie_seen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vista"
+                android:layout_below="@id/edit_text_movie_title"
+                android:layout_toEndOf="@id/rating_bar_movie_rating"
+                android:layout_marginStart="16dp" />
+
+            <!-- Botón para seleccionar imagen desde la galería -->
+            <Button
+                android:id="@+id/button_select_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar Imagen"
+                android:layout_below="@id/rating_bar_movie_rating"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <!-- ImageView para mostrar la imagen seleccionada -->
+            <ImageView
+                android:id="@+id/image_view_selected_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/button_select_image"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

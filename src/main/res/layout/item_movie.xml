@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Imagen de la Película -->
+        <ImageView
+            android:id="@+id/image_view_movie_poster"
+            android:layout_width="64dp"
+            android:layout_height="96dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/add_circle" />
+
+        <!-- Título de la Película -->
+        <EditText
+            android:id="@+id/edit_text_movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Título de la Película que puede ser bastante largo"
+            android:layout_toEndOf="@id/image_view_movie_poster"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_alignTop="@id/image_view_movie_poster"
+            android:focusable="false" />
+
+        <!-- Estado de Vista de la Película -->
+        <CheckBox
+            android:id="@+id/check_box_movie_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vista"
+            android:layout_below="@id/edit_text_movie_title"
+            android:layout_alignStart="@id/edit_text_movie_title"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp" />
+
+        <!-- Calificación de la Película -->
+        <RatingBar
+            android:id="@+id/rating_bar_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_text_movie_title"
+            android:layout_marginStart="-68dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/check_box_movie_status"
+            android:numStars="5"
+            android:rating="0.0"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
+            android:stepSize="0.5" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
